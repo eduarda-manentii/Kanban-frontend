@@ -1,0 +1,59 @@
+<div 
+  class="modal fade show d-block">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title">Nova Tarefa</h5>
+        <button type="button" class="btn-close" (click)="close.emit()"></button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="mb-2">
+          <label>Título</label>
+          <input [(ngModel)]="task.title" class="form-control">
+        </div>
+        <div class="mb-2">
+          <label>Descrição</label>
+          <textarea [(ngModel)]="task.description" class="form-control"></textarea>
+        </div>
+        <div class="mb-2">
+          <label>Prioridade</label>
+          <select class="form-control" [(ngModel)]="task.priority">
+            <option [ngValue]="3">Alta</option>
+            <option [ngValue]="2">Média</option>
+            <option [ngValue]="1">Baixa</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label>Categoria</label>
+          <select class="form-control" [(ngModel)]="task.category">
+            <option value="Backend">Backend</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Planejamento">Planejamento</option>
+            <option value="Infraestrutura">Infraestrutura</option>
+            <option value="Melhoria">Melhoria</option>
+          </select>
+        </div>
+        <div class="mb-2">
+          <label>Data de Entrega</label>
+          <input type="datetime-local" class="form-control" [(ngModel)]="task.dueDate">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="close.emit()">Cancelar</button>
+        <button 
+          class="btn btn-primary" 
+          [disabled]="!task.title || !task.description || !task.category || !task.dueDate || ((task.priority === null || task.priority === undefined))"
+          (click)="onSave()">
+          Salvar
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop fade show" *ngIf="visible"></div>
