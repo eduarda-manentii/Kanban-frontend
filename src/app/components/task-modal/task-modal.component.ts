@@ -15,7 +15,7 @@ export interface Task {
   selector: 'app-task-modal',
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './task-modal.component.html'
 })

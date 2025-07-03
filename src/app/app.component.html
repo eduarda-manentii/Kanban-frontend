@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container mt-4">
   <div class="row">
     <!-- BACKLOG -->
@@ -17,9 +19,9 @@
               Data de entrega: {{formatDate(task.dueDate) }}
             </small>
             <br>
-            <button 
-              *ngIf="i === 0" 
-              class="btn btn-sm btn-outline-primary mt-2" 
+            <button
+              *ngIf="i === 0"
+              class="btn btn-sm btn-outline-primary mt-2"
               (click)="moveToDoing()">
               Mover para 'Em andamento'
             </button>
@@ -44,9 +46,9 @@
               Data de entrega: {{ formatDate(task.dueDate) }}
             </small>
             <br>
-            <button 
-              *ngIf="i === 0" 
-              class="btn btn-sm btn-outline-warning mt-2" 
+            <button
+              *ngIf="i === 0"
+              class="btn btn-sm btn-outline-warning mt-2"
               (click)="moveToDone()">
               Mover para 'Concluído'
             </button>
@@ -69,9 +71,9 @@
             <small class="mb-0" [ngClass]="getDueDateColor(task)">
               Data de entrega: {{ formatDate(task.dueDate) }}
             </small>
-            <button 
-              *ngIf="i === 0" 
-              class="btn btn-sm btn-outline-success mt-2" 
+            <button
+              *ngIf="i === 0"
+              class="btn btn-sm btn-outline-success mt-2"
               (click)="moveDoneToDoing()">
               Mover para 'Em andamento'
             </button>
@@ -83,8 +85,8 @@
 </div>
 
 <app-task-modal
- *ngIf="modalVisible" 
-  [visible]="modalVisible" 
-  (close)="modalVisible = false" 
+ *ngIf="modalVisible"
+  [visible]="modalVisible"
+  (close)="modalVisible = false"
   (save)="handleTaskSave($event)">
 </app-task-modal>

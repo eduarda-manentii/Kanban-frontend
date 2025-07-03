@@ -3,12 +3,14 @@ import { TaskService } from './services/task.service';
 import { CommonModule } from '@angular/common';
 import { TaskModalComponent } from './components/task-modal/task-modal.component';
 import { Task } from './components/task-modal/task-modal.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     CommonModule,
-    TaskModalComponent
+    TaskModalComponent,
+    HeaderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
